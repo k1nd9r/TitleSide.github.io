@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TitleSide</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<style>
+    a {
+		text-decoration: none;	
+        width: calc(var(--index) * 7);
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+		font-family: Arial;
+		font-weight: 600;
+		text-transform: uppercase;
+		font-size: calc(var(--index) * .71);
+		letter-spacing: -.02vw;
+		padding: calc(var(--index) * .7) calc(var(--index) * 1.25);
+		background-color: transparent;
+		color: black;
+		border-radius: 10em;
+
+		outline: none;
+		cursor: pointer;
+        }
+</style>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="Name">
+                <h1>Parallax 3D course</h1>
+            </div>
+            <div class="img">
+                <img src="../ex_2/Desktop Screenshot 2024.02.25 - 22.05.10.07.png" class = "image"/>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h1>HTML</h1>
+                    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/main.css&quot;&gt;
+    &lt;script src=&quot;js/app.js&quot; defer&gt;&lt;/script&gt;
+    &lt;script src=&quot;libs/rain.js&quot; defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;logo&quot; style=&quot;background-image: url(img/logo.svg);&quot;&gt;&lt;/div&gt;
+    &lt;section class=&quot;layers&quot;&gt;
+    &lt;div class=&quot;layers__container&quot;&gt;
+        &lt;div class=&quot;layers__item layer-1&quot; style=&quot;background-image: 
+        url(img/layer-1.jpg);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;layers__item layer-2&quot; style=&quot;background-image: 
+        url(img/layer-2.png);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;layers__item layer-3&quot;&gt;
+        &lt;div class=&quot;hero-content&quot;&gt;
+            &lt;h1&gt;Natural Forest &lt;span&gt;HTML / CSS&lt;/span&gt;&lt;/h1&gt;
+            &lt;div class=&quot;hero-content__p&quot;&gt;Creating a beautiful 3D website 
+            with a ‘lens effect’&lt;/div&gt;
+            &lt;button class=&quot;button-start&quot;&gt;Start Learning&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;layers__item layer-4&quot;&gt;
+        &lt;canvas class=&quot;rain&quot;&gt;&lt;/canvas&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;layers__item layer-5&quot; style=&quot;background-image: 
+        url(img/layer-5.png);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;layers__item layer-6&quot; style=&quot;background-image: 
+        url(img/layer-6.png);&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </pre>
+                </div>
+                <div class="col">
+                    <h1>CSS</h1>
+                    <pre>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --index: calc(1vw + 1vh);
+    --transition: 1.5s cubic-bezier(.05, .5, 0, 1);
+}
+@font-face {
+    font-family: mb;
+    src: url(../fonts/MONTSERRAT-BOLD.TTF);
+    font-weight: 900;
+}
+@font-face {
+    font-family: rr;
+    src: url(../fonts/raleway-regular.woff2);
+
+}
+body {
+    background-color: #000;
+    color: #fff;
+}
+.logo {
+    --logo-size: calc(var(--index) * 7.8);
+    width: var(--logo-size);
+    height: var(--logo-size);
+    background-repeat: no-repeat;
+    position: absolute;
+    left: calc(51% - calc(var(--logo-size) / 2));
+    top: calc(var(--index) * 2.8);
+    z-index: 1;
+}
+.layers {
+    perspective: 1000px;
+    overflow: hidden;
+}
+.layers__container {
+    height: 100vh;
+    min-height: 500px;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+    will-change: transform;
+    transition: transform var(--transition);
+}
+.layers__item {
+    position: absolute;
+    inset: -5vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.layer-1 {
+    transform: translateZ(-55px) scale(1.06);
+}
+.layer-2 {
+    transform: translateZ(80px) scale(.88);
+}
+.layer-3 {
+    transform: translateZ(180px) scale(.8);
+}
+.layer-4 {
+    transform: translateZ(190px) scale(.9);
+}
+.layer-5 {
+    transform: translateZ(300px) scale(.9);
+}
+.layer-6 {
+    transform: translateZ(380px);
+}
+.hero-content {
+    font-size: calc(var(--index) * 2.9);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: calc(var(--index) * -.15);
+    line-height: 1.35em;
+    margin-top: calc(var(--index) * 5.5);
+    font-family: mb;
+}
+.hero-content span {
+    display: block;
+}
+.hero-content__p {
+    text-transform: none;
+    font-family: rr;
+    letter-spacing: normal;
+    font-size: calc(var(--index) * .73);
+    line-height: 3;
+}
+.button-start {
+    font-family: Arial;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: calc(var(--index) * .71);
+    letter-spacing: -.02vw;
+    padding: calc(var(--index) * .7) calc(var(--index) * 1.25);
+    background-color: transparent;
+    color: #fff;
+    border-radius: 10em;
+    border: rgb(255 255 255 / .4) 3px solid;
+    outline: none;
+    cursor: pointer;
+    margin-top: calc(var(--index) * 2.5);
+}
+.layer-4, .layer-5, .layer-6 {
+    pointer-events: none;
+}
+                    </pre>
+                </div>
+                <div class="col">
+                    <h1>JavaScript</h1>
+                    <pre>
+document.addEventListener('mousemove', e => {
+    Object.assign(document.documentElement, {
+        style: `
+        --move-x: ${(e.clientX - window.innerWidth / 2) * -.005}deg;
+        --move-y: ${(e.clientY - window.innerHeight / 2) * .01}deg;
+        `
+    })
+})                                                           
+                    </pre>
+                </div>
+            </div>
+        <div class="download">
+            <ul>
+                <a href="../ex_2/parallax-3d-lens-effect-website.rar" target="_blank">Скачать материал 🍀</a>
+            </ul>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

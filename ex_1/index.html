@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TitleSide</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<style>
+    a {
+		text-decoration: none;	
+        width: calc(var(--index) * 7);
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+		font-family: Arial;
+		font-weight: 600;
+		text-transform: uppercase;
+		font-size: calc(var(--index) * .71);
+		letter-spacing: -.02vw;
+		padding: calc(var(--index) * .7) calc(var(--index) * 1.25);
+		background-color: transparent;
+		color: black;
+		border-radius: 10em;
+
+		outline: none;
+		cursor: pointer;
+        }
+</style>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="Name">
+                <h1>Creative scroll  course</h1>
+            </div>
+            <div class="img">
+                <img src="../ex_1/Desktop Screenshot 2024.02.23 - 16.37.55.29.png" class = "image"/>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h1>HTML</h1>
+                    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+
+    &lt;title&gt;Document&lt;/title&gt;
+
+    &lt;script src=&quot;libs/gsap/gsap.min.js&quot; defer&gt;&lt;/script&gt;
+    &lt;script src=&quot;libs/gsap/ScrollTrigger.min.js&quot; defer&gt;&lt;/script&gt;
+    &lt;script src=&quot;libs/gsap/ScrollSmoother.min.js&quot; defer&gt;&lt;/script&gt;
+
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/main.css&quot;&gt;
+    &lt;script src=&quot;js/app.js&quot; defer&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;div class=&quot;wrapper&quot;&gt;
+    &lt;div class=&quot;content&quot;&gt;
+
+        &lt;header class=&quot;hero-section&quot;&gt;
+        &lt;img data-speed=&quot;.6&quot; class=&quot;hero&quot; src=&quot;img/hero.png&quot; alt=&quot;Alt&quot; &gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div data-speed=&quot;.75&quot; class=&quot;main-header&quot;&gt;
+            &lt;h1 class=&quot;main-title&quot;&gt;creative scroll&lt;/h1&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/header&gt;
+
+        &lt;div class=&quot;portfolio&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;main class=&quot;gallery&quot;&gt;
+
+            &lt;div data-speed=&quot;.9&quot; class=&quot;gallery__left&quot;&gt;
+
+                &lt;img class=&quot;gallery__item&quot; src=&quot;img/work/1.jpg&quot; alt=&quot;Alt&quot;&gt;
+                &lt;img class=&quot;gallery__item&quot; src=&quot;img/work/2.jpg&quot; alt=&quot;Alt&quot;&gt;
+
+                &lt;div class=&quot;text-block gallery__item&quot;&gt;
+                &lt;h2 class=&quot;text-block__h&quot;&gt;Creative floating scroll 
+                &lt;with amazing parallax effect&lt;/h2&gt;
+                &lt;p class=&quot;text-block__p&quot;&gt;Lorem ipsum dolor sit amet, 
+                &lt;consectetur adipiscing elit, sed do eiusmod tempor 
+                &lt;amount scrolling.&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;img class=&quot;gallery__item&quot; src=&quot;img/work/6.jpg&quot; alt=&quot;Alt&quot;&gt;
+
+            &lt;/div&gt;
+
+            &lt;div data-speed=&quot;1.1&quot; class=&quot;gallery__right&quot;&gt;
+
+                &lt;div class=&quot;text-block gallery__item&quot;&gt;
+                &lt;h2 class=&quot;text-block__h&quot;&gt;Creative floating 
+                &lt;scroll with amazing parallax effect&lt;/h2&gt;
+                &lt;p class=&quot;text-block__p&quot;&gt;Lorem ipsum dolor sit amet, 
+                &lt;consectetur adipiscing elit, sed do eiusmod tempor 
+                &lt;amount scrolling.
+                    </pre>
+                </div>
+                <div class="col">
+                    <h1>CSS</h1>
+                    <pre>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --index: calc(1vw + 1vh);
+    --color-header: #f4efec;
+    --color-text: #cdc6c3;
+    --gallery-gap: calc(var(--index) * 7.5);
+}
+@font-face {
+    font-family: raleway-c;
+    src: url(../fonts/raleway-regular.woff2);
+}
+@font-face {
+    font-family: outfit-c;
+    src: url(../fonts/outfit-regular.woff2);
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: outfit-c;
+}
+
+.content, .hero, .main-header, .gallery > * {
+    will-change: transform;
+}
+body {
+    background-image: url(../img/bg.jpg);
+    background-size: 50px;
+    color: #fafafa;
+    font-family: raleway-c;
+    overflow-x: hidden;
+}
+.hero {
+    width: calc(var(--index) * 36);
+    position: absolute;
+    left: 37vw;
+    top: 22vh;
+    z-index: -1;
+}
+.main-header {
+    height: 100vh;
+}
+.container {
+    padding: 0 7vw;
+}
+.main-title {
+    font-size: calc(var(--index) * 8);
+    position: absolute;
+    width: min-content;
+    bottom: 12vh;
+    line-height: .9;
+}
+.gallery {
+    display: flex;
+    padding: calc(var(--index) * 8) 0;
+}
+.gallery > * {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.gallery__item {
+    max-width: calc(var(--index) * 21);
+    margin-bottom: var(--gallery-gap);
+    max-height: 180vh;
+    border-radius: 8px;
+}
+.gallery__left {
+    margin-top: calc(var(--gallery-gap) * 1.75);
+}
+.gallery__right .gallery__item {
+    margin: 0;
+    margin-top: var(--gallery-gap);
+}
+.text-block {
+    color: var(--color-text);
+    position: relative;
+}
+.text-block__h {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: var(--color-header);
+    margin-bottom: 1.5rem;
+}
+.text-block__p {
+    line-height: 1.75;
+}
+                        </pre>
+                </div>
+                <div class="col">
+                    <h1>JavaScript</h1>
+                    <pre>
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+
+if (ScrollTrigger.isTouch !== 1) {
+
+    ScrollSmoother.create({
+        wrapper: '.wrapper',
+        content: '.content',
+        smooth: 1.5,
+        effects: true
+    })
+
+    gsap.fromTo('.hero-section', { opacity: 1 }, {
+        opacity: 0,
+        scrollTrigger: {
+            trigger: '.hero-section',
+            start: 'center',
+            end: '820',
+            scrub: true
+        }
+    })
+
+    let itemsL = gsap.utils.toArray('.gallery__left .gallery__item')
+
+    itemsL.forEach(item => {
+        gsap.fromTo(item, { opacity: 0, x: -50 }, {
+            opacity: 1, x: 0,
+            scrollTrigger: {
+                trigger: item,
+                start: '-850',
+                end: '-100',
+                scrub: true
+            }
+        })
+    })
+
+    let itemsR = gsap.utils.toArray('.gallery__right .gallery__item')
+
+    itemsR.forEach(item => {
+        gsap.fromTo(item, { opacity: 0, x: 50 }, {
+            opacity: 1, x: 0,
+            scrollTrigger: {
+                trigger: item,
+                start: '-750',
+                end: 'top',
+                scrub: true
+            }
+        })
+    })
+
+                        } 
+                    </pre>
+                </div>
+            </div>
+        <div class="download">
+            <ul>
+                <a href="../ex_1/creative-scroll-website.rar" target="_blank">Скачать материал 🍀</a>
+            </ul>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

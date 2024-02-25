@@ -1,0 +1,97 @@
+@media (max-width: 1200px) {
+    .row {
+        justify-content: center;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .logo {
+        --logo-size: 60px; 
+        top: var(--index); 
+    }
+}
+@font-face {
+    font-family: mb;
+    src: url(../fonts/MONTSERRAT-BOLD.TTF);
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: rr;
+    src: url(../fonts/raleway-regular.woff2);
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #d3d3d3;
+    border-radius: 12.5px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.col {
+    border-radius: 20px;
+    min-height: 300px;
+    width: 550px;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    color: green;
+
+}
+.Name{
+    display: flex;
+    justify-content: center;
+    font-family: mb;
+}
+.img{
+    display: flex;
+    justify-content: center;
+    
+}
+
+h1{
+    color: black;
+    font-family: mb;
+}
+ul{
+    display: flex;
+    justify-content: left;
+}
+.image{
+    border-radius: 10px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+    --transition: 1.5s cubic-bezier(.05, .5, 0, 1);
+}
+
+
+
+body {   
+    color: #fff;
+}
+
+.logo {
+    --logo-size: calc(var(--index) * 7.8);
+    width: var(--logo-size);
+    height: var(--logo-size);
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 50%; 
+    top: calc(var(--index) * 2.8);
+    z-index: 1;
+    transform: translateX(-50%); 
+}
+
